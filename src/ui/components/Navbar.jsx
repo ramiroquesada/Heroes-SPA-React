@@ -13,7 +13,7 @@ export const Navbar = () => {
 
 		logout();
 
-		Navigate('/login', {
+		Navigate('./login', {
 			replace: true
 		})
 	}
@@ -25,7 +25,7 @@ export const Navbar = () => {
 
             <Link 
                 className="navbar-brand" 
-                to="/"
+                to="./"
             >
                 HEROES
             </Link>
@@ -42,7 +42,7 @@ export const Navbar = () => {
                     <li className="nav-item">
 											<NavLink
 													className="nav-link"
-													to="/marvel"
+													to="./marvel"
 											>
 													Marvel
 											</NavLink>
@@ -53,7 +53,7 @@ export const Navbar = () => {
                     <li className="nav-item">
 											<NavLink
 													className="nav-link"
-													to="/dc"
+													to="./dc"
 											>
 													DC
 											</NavLink>
@@ -62,7 +62,7 @@ export const Navbar = () => {
 										<li className="nav-item">
 											<NavLink 
 												className="nav-link" 
-												to="/search"
+												to="./search"
 											>
 												Search
 											</NavLink>
