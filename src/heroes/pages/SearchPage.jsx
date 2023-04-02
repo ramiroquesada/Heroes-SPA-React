@@ -65,7 +65,7 @@ export const SearchPage = () => {
 
 					<div className="alert alert-danger animate__animated animate__lightSpeedInRight" style={{display: showError ? '' : 'none'}}>No results for <b>{q}</b></div>
 
-					<div style={{display: showSearch ? 'none' : ''}}>
+					<div className="row row-cols-lg-3 mb-5 row-cols-md-2 row-cols-1 g-3 animate__animated animate__fadeIn justify-content-between" style={{display: showSearch ? 'none' : ''}}>
 						{
 							heroes.map(heroe => (
 								<div className="mb-2 animate__animated animate__fadeInRight animate__faster" key={heroe.id}>

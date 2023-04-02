@@ -19,7 +19,7 @@ export const HeroPage = () => {
 	}
 
 	return (
-		<div className="row mt-5 ">
+		<div className="row mt-5">
 			<div className="col-4  animate__animated animate__fadeInLeft">
 				<img
 					className="img-thumbnail "
