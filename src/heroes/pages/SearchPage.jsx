@@ -43,6 +43,7 @@ export const SearchPage = () => {
 					
 					<form onSubmit={onSearchSubmit} >
 						<input
+							required
 							className="form-control"
 							type="text"
 							placeholder="Search a hero"
