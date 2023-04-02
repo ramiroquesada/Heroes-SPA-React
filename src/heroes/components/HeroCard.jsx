@@ -7,7 +7,7 @@ export const HeroCard = ({
 	alter_ego,
 }) => {
 
-	const heroImgUrl = `./assets/heroes/${id}.jpg`
+	const heroImgUrl = `/src/images/${id}.jpg`
 
 	return (
 		<div className="col"  style={{maxWidth: '25rem'}}>
