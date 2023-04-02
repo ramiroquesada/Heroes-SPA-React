@@ -6,7 +6,7 @@ import { HeroesApp } from './HeroesApp'
 import './styles.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <BrowserRouter>
+  <BrowserRouter basename='/Heroes-SPA-React'>
     <HeroesApp />
   </BrowserRouter>,
 )
