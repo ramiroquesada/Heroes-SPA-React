@@ -73,7 +73,7 @@ export const Navbar = () => {
 
             <div className="navbar-collapse collapse w-100 order-3 dual-collapse2 d-flex justify-content-end gap-3">
                 <div className="nav-item">
-                    <span className='nav-item nav-link text-secondary user-select-none'>Welcome &nbsp;&nbsp; <span className='text-primary'>{user?.name.toUpperCase()}</span></span>
+                    <span className='nav-item nav-link text-secondary user-select-none'>Welcome &nbsp;&nbsp; <span className='text-info fw-bold'>{user?.name.toUpperCase()}</span></span>
                 </div>
 								<button className='nav-item nav-link btn text-white'
 								onClick={ onLogout }

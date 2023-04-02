@@ -18,11 +18,12 @@ export const HeroCard = ({
 					</div>
 					<div className="col-7 d-flex">
 						<div className="card-body d-flex flex-column justify-content-between">
-							<h5 className="card-title">{superhero}</h5>
+							<h5 className="card-title fw-bolder">{superhero}</h5>
 							<p className="card-text">{alter_ego}</p>
 							
 							<Link to={`/hero/${id}`}>
-								More info...
+								<button className="btn btn-info rounded-5 text-white fw-semibold">More info...</button>
+								
 							</Link>
 
 						</div>

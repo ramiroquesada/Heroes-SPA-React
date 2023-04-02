@@ -20,28 +20,29 @@ export const HeroPage = () => {
 
 	return (
 		<div className="row mt-5">
-			<div className="col-4  animate__animated animate__fadeInLeft">
+			<div className="col-4  animate__animated animate__fadeInLeft ">
 				<img
-					className="img-thumbnail "
+					className="img-thumbnail border-info border-2"
 					src={`https://ramessj.github.io/Heroes-SPA-React/assets/${id}.jpg`}
 					alt={hero.superhero}
 				/>	
 			</div>
 
 			<div className="col-8 animate__animated animate__fadeInRight" >
-				<h3 className="animate__animated animate__slideInDown ">{hero.superhero}</h3>
+				<h2 className="animate__animated animate__slideInDown fw-bold">{hero.superhero}</h2>
+				<hr className="border-2 border-info"/>
 				<ul className="list-group list-group-flush">
-					<li className="list-group-item"> <b>Alter ego:</b> {hero.alter_ego}	</li>
-					<li className="list-group-item"> <b>Publisher:</b> {hero.publisher}	</li>
-					<li className="list-group-item"> <b>First Appearence:</b> {hero.first_appearance}	</li>
+					<li className="list-group-item"> Alter ego: &nbsp; <b>{hero.alter_ego}</b>	</li>
+					<li className="list-group-item"> Publisher: &nbsp; <b>{hero.publisher}</b>	</li>
+					<li className="list-group-item"> First Appearence: &nbsp; <b>{hero.first_appearance}</b>	</li>
 				</ul>
 
-				<h5 className="mt-3">Characters:</h5>
+				<h5 className="mt-3 mb-3">Characters:</h5>
 				<p>{hero.characters}</p>
 
 				<button
 				onClick={onNavigateBack}
-				className="btn btn-outline-primary">Go Back</button>
+				className="btn btn-outline-info rounded-5 text-black fw-semibold">Go Back</button>
 
 			</div>			
 		</div>
