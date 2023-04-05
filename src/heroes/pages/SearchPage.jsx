@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react"
 import { useLocation, useNavigate } from "react-router-dom"
 import queryString from 'query-string'
 
@@ -14,7 +15,17 @@ export const SearchPage = () => {
 
 	const {q = ''} = queryString.parse(location.search);
 
-	const heroes = getHeroesByName(q);
+
+	const [heroes, setHeroes] = useState([]);
+
+	useEffect(() => {
+    async function fetchHeroes() {
+      const result = await getHeroesByName(q);
+      setHeroes(result);
+    }
+    fetchHeroes();
+  }, [q]);
+
 
 	const showSearch = (q.length === 0 );
 

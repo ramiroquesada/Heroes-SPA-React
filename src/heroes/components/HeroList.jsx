@@ -1,10 +1,19 @@
+import {  useState, useEffect } from "react";
 import { HeroCard } from "./";
 import { getHeroesByPublisher } from "../helpers"
-import { useMemo } from "react";
 
 export const HeroList = ({publisher}) => {
 
-	const heroes = useMemo(()=> getHeroesByPublisher(publisher), [publisher]) 
+
+	const [heroes, setHeroes] = useState([]);
+
+  useEffect(() => {
+    async function fetchHeroes() {
+      const result = await getHeroesByPublisher(publisher);
+      setHeroes(result);
+    }
+    fetchHeroes();
+  }, [publisher]);
 
 
 	return (

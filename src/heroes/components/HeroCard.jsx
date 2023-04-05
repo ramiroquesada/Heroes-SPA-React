@@ -1,35 +1,28 @@
-import { Link } from "react-router-dom"
+import { Link } from 'react-router-dom';
+import { LazyLoadImage  } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
-
-export const HeroCard = ({
-	id,
-	superhero,
-	alter_ego,
-}) => {
-
-	const heroImgUrl = `https://ramessj.github.io/Heroes-SPA-React/assets/${id}.jpg`
-
+export const HeroCard = ({ id, name, images }) => {
 	return (
-		<div className="col"  style={{maxWidth: '25rem'}}>
-			<div className="card">
-				<div className="row no-gutters">
-					<div className="col-5">
-						<img className="card-img" src={heroImgUrl} alt={superhero} />
-					</div>
-					<div className="col-7 d-flex">
-						<div className="card-body d-flex flex-column justify-content-between">
-							<h5 className="card-title fw-bolder">{superhero}</h5>
-							<p className="card-text">{alter_ego}</p>
-							
-							<Link to={`/hero/${id}`}>
-								<button className="btn btn-info rounded-5 text-white fw-semibold">More info...</button>
-								
-							</Link>
+		<div className="col" style={{ maxWidth: '10rem' }}>
+			<Link to={`/hero/${id}`} className="text-decoration-none">
+				<div className="card">
+					<div className="col no-gutters d-flex flex-column justify-content-center">
 
-						</div>
+						<LazyLoadImage
+							className="card-img"
+							src={images.sm}
+							alt={name}
+							effect="blur"
+							placeholderSrc='loadingImg.gif'>
+						</LazyLoadImage>
+
+						<p className="card-title fw-bolder text-nowrap d-flex justify-content-center p-2">
+							{name}
+						</p>
 					</div>
 				</div>
-			</div>
+			</Link>
 		</div>
-	)
-}
+	);
+};

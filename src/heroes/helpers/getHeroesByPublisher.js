@@ -1,7 +1,10 @@
-import { heroes } from "../data/heroes";
+// import { heroes } from "../data/heroes";
+
+import { getHeroesFetch } from "../../hooks/useFetch"
 
 
-export const getHeroesByPublisher = ( publisher ) =>{
+export const getHeroesByPublisher = async ( publisher ) =>{
+	const  heroes =  await getHeroesFetch();
 
 	const validPublishers = ['DC Comics', 'Marvel Comics'];
 
@@ -9,6 +12,6 @@ export const getHeroesByPublisher = ( publisher ) =>{
 		throw new Error(`${publisher} no es un publisher valido`)
 	}
 
-	return heroes.filter(heroe => heroe.publisher === publisher)
+	return  heroes.filter(heroe => heroe.biography.publisher === publisher)
 
 }
