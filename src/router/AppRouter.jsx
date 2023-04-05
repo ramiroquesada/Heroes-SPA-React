@@ -2,8 +2,7 @@ import { Routes, Route } from 'react-router-dom'
 
 import { HeroesRoutes } from '../heroes'
 import { LoginPage } from '../auth'
-// import { PrivateRoutes} from './PrivateRoutes'
-// import { PublicRoutes } from './PublicRoutes'
+
 import { PrivateRoutes, PublicRoutes } from './'
 
 export const AppRouter = () => {

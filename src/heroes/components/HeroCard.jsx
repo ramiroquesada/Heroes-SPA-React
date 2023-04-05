@@ -5,7 +5,7 @@ import 'react-lazy-load-image-component/src/effects/blur.css';
 export const HeroCard = ({ id, name, images }) => {
 	return (
 		<div className="col" style={{ maxWidth: '10rem' }}>
-			<Link to={`/heroe/${id}`} className="text-decoration-none">
+			<Link to={`/heroe${id}`} className="text-decoration-none">
 				<div className="card">
 					<div className="col no-gutters d-flex flex-column justify-content-center">
 
@@ -14,7 +14,7 @@ export const HeroCard = ({ id, name, images }) => {
 							src={images.sm}
 							alt={name}
 							effect="blur"
-							placeholderSrc='loadingImg.gif'>
+							placeholderSrc='./loadingImg.gif'>
 						</LazyLoadImage>
 
 						<p className="card-title fw-bolder text-nowrap d-flex justify-content-center p-2">
