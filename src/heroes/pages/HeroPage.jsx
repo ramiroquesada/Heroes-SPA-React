@@ -14,32 +14,32 @@ export const HeroPage = () => {
 	};
 
 	const getHeroeByIdPromise = (id) => {
-    return new Promise((resolve, reject) => {
-      const hero = getHeroeById(id);
-      if (hero) {
+		return new Promise((resolve, reject) => {
+			const hero = getHeroeById(id);
+			if (hero) {
 				resolve(hero);
-      } else {
-        reject(new Error(`No se pudo obtener el héroe con ID ${id}`));
-      }
-    });
-  };
+			} else {
+				reject(new Error(`No se pudo obtener el héroe con ID ${id}`));
+			}
+		});
+	};
 
-  const fetchResult = async () => {
-    try {
-      const result = await getHeroeByIdPromise(id);
-      setHero(result);			
-    } catch (error) {
-      throw new Error(error);
-    }
-  };
+	const fetchResult = async () => {
+		try {
+			const result = await getHeroeByIdPromise(id);
+			setHero(result);
+		} catch (error) {
+			throw new Error(error);
+		}
+	};
 
-  useEffect(() => {
-    fetchResult();
-  }, []);
+	useEffect(() => {
+		fetchResult();
+	}, []);
 
 	if (!hero) {
-		return null	    
-  }
+		return null;
+	}
 
 	return (
 		<>
@@ -72,10 +72,14 @@ export const HeroPage = () => {
 						<li className="list-group-item">
 							Publisher: &nbsp;<b>{hero.biography.publisher}</b>
 						</li>
-						<li className="list-group-item">
-							First Appearence: &nbsp;
-							{<b>{hero.biography.firstAppearance}</b>}
-						</li>
+						{hero.biography.firstAppearance == '-' ? (
+							''
+						) : (
+							<li className="list-group-item">
+								First Appearence: &nbsp;
+								{<b>{hero.biography.firstAppearance}</b>}
+							</li>
+						)}
 						<br />
 						<li className="list-group-item">
 							Full Name: &nbsp;

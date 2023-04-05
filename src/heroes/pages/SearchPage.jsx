@@ -9,14 +9,14 @@ import { getHeroesByName } from "../helpers"
 
 export const SearchPage = () => {
 
+	const [heroes, setHeroes] = useState([]);
+
 	const navigate = useNavigate();
 
 	const location = useLocation();
 
 	const {q = ''} = queryString.parse(location.search);
 
-
-	const [heroes, setHeroes] = useState([]);
 
 	useEffect(() => {
     async function fetchHeroes() {
