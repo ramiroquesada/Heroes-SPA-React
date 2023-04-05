@@ -14,7 +14,7 @@ export const HeroCard = ({ id, name, images }) => {
 							src={images.sm}
 							alt={name}
 							effect="blur"
-							placeholderSrc='./loadingImg.gif'>
+							placeholderSrc='/loadingImg.gif'>
 						</LazyLoadImage>
 
 						<p className="card-title fw-bolder text-nowrap d-flex justify-content-center p-2">
