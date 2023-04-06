@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { LazyLoadImage  } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
+import spinner from '../public/Spinner.svg'
 
 export const HeroCard = ({ id, name, images }) => {
 	return (
@@ -11,7 +12,7 @@ export const HeroCard = ({ id, name, images }) => {
 
 						<LazyLoadImage
 							className="card-img"
-							placeholderSrc='/loadingImg.gif'
+							placeholderSrc={spinner}
 							effect="blur"
 							src={images.sm}
 							alt={name}

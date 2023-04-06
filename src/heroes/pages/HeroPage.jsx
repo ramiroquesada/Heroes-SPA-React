@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { getHeroeById } from '../helpers';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import spinner from '../public/Spinner.svg'
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
 export const HeroPage = () => {
@@ -59,7 +60,7 @@ export const HeroPage = () => {
 				<div className="col-sm-12 col-md-5 col-lg-4 d-flex flex-column align-items-center">
 					<LazyLoadImage
 						className="img-thumbnail border-info border-3 mb-3"
-						placeholderSrc="/loadingImg.gif"
+						placeholderSrc={spinner}
 						effect="blur"
 						src={hero.images.md}
 						alt={hero.name}
