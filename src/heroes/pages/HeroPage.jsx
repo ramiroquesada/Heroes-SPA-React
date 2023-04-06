@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { getHeroeById } from '../helpers';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 import spinner from '../public/Spinner.svg'
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
 export const HeroPage = () => {
@@ -46,7 +46,7 @@ export const HeroPage = () => {
 
 	return (
 		<>
-			<div className="row mt-4 mb-4 gx-4">
+			<div className="row mt-4 mb-2 gx-4">
 				<div className="col col-sm-6 col-md-5 col-lg-4 d-flex">
 					<button
 						onClick={onNavigateBack}
@@ -56,10 +56,11 @@ export const HeroPage = () => {
 				</div>
 				<div className="col col-sm-6 col-md-7 col-lg-8 d-flex"></div>
 			</div>
-			<div className="row mt-3 mb-5">
-				<div className="col-sm-12 col-md-5 col-lg-4 d-flex flex-column align-items-center">
+			<div className="row mb-3 mt-3">
+				<div className="col-sm-12 col-md-5 col-lg-4 d-flex flex-column align-items-center mb-4">
 					<LazyLoadImage
-						className="img-thumbnail border-info border-3 mb-3"
+						className="img-thumbnail border-info border-3 "
+						style={{maxHeight:'450', marginTop: '2rem'}}
 						placeholderSrc={spinner}
 						effect="blur"
 						src={hero.images.md}
@@ -67,7 +68,7 @@ export const HeroPage = () => {
 					/>
 				</div>
 
-				<div className=" px-3 px-md-4 px-md-5 col-sm-12 col-md-7 col-lg-8 animate__animated animate__fadeInRight mt-5 ">
+				<div className=" px-3 px-md-4 px-md-5 col-sm-12 col-md-7 col-lg-8 animate__animated animate__fadeInRight d-flex flex-column justify-content-center">
 					<div className="d-flex justify-content-around align-items-center">
 						<h2 className="animate__animated animate__slideInDown fw-bold m-0">
 							{hero.name}
