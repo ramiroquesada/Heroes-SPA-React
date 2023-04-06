@@ -3,7 +3,6 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { getHeroeById } from '../helpers';
 import spinner from '../public/Spinner.svg'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import 'react-lazy-load-image-component/src/effects/blur.css';
 
 export const HeroPage = () => {
 	const { id } = useParams();
