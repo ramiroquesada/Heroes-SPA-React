@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { getHeroeById } from '../helpers';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 export const HeroPage = () => {
 	const { id } = useParams();
@@ -43,21 +45,28 @@ export const HeroPage = () => {
 
 	return (
 		<>
-			<button
-				onClick={onNavigateBack}
-				className="btn btn-outline-info rounded-5 text-black fw-semibold mt-3">
-				Go Back
-			</button>
-			<div className="row mt-4 mb-4">
-				<div className="col-sm-12 col-md-5 col-lg-4  animate__animated animate__fadeInLeft justify-content-center d-flex  align-content-center mb-3">
-					<img
-						className="img-thumbnail border-info border-2 "
+			<div className="row mt-4 mb-4 gx-4">
+				<div className="col col-sm-6 col-md-5 col-lg-4 d-flex">
+					<button
+						onClick={onNavigateBack}
+						className="btn btn-secondary rounded-5 text-white fw-semibold mt-2">
+						Go Back
+					</button>
+				</div>
+				<div className="col col-sm-6 col-md-7 col-lg-8 d-flex"></div>
+			</div>
+			<div className="row mt-3 mb-5">
+				<div className="col-sm-12 col-md-5 col-lg-4 d-flex flex-column align-items-center">
+					<LazyLoadImage
+						className="img-thumbnail border-info border-3 mb-3"
+						placeholderSrc="/loadingImg.gif"
+						effect="blur"
 						src={hero.images.md}
 						alt={hero.name}
 					/>
 				</div>
 
-				<div className="col-sm-12 col-md-7 col-lg-8 animate__animated animate__fadeInRight">
+				<div className=" px-3 px-md-4 px-md-5 col-sm-12 col-md-7 col-lg-8 animate__animated animate__fadeInRight mt-5 ">
 					<div className="d-flex justify-content-around align-items-center">
 						<h2 className="animate__animated animate__slideInDown fw-bold m-0">
 							{hero.name}
@@ -72,6 +81,7 @@ export const HeroPage = () => {
 						<li className="list-group-item">
 							Publisher: &nbsp;<b>{hero.biography.publisher}</b>
 						</li>
+
 						{hero.biography.firstAppearance == '-' ? (
 							''
 						) : (
@@ -81,26 +91,25 @@ export const HeroPage = () => {
 							</li>
 						)}
 						<br />
-						<li className="list-group-item">
-							Full Name: &nbsp;
-							<b>
-								{hero.biography.fullName == '' ? (
-									<b>Unknown :/</b>
-								) : (
-									hero.biography.fullName
-								)}
-							</b>
-						</li>
-						<li className="list-group-item">
-							Alignment: &nbsp;
-							<b>
-								{hero.biography.alignment == '-' ? (
-									<b>Unknown :/</b>
-								) : (
-									hero.biography.alignment.toUpperCase()
-								)}
-							</b>
-						</li>
+
+						{hero.biography.fullName == '' ? (
+							''
+						) : (
+							<li className="list-group-item">
+								Full Name: &nbsp;
+								<b>{hero.biography.fullName}</b>
+							</li>
+						)}
+
+						{hero.biography.alignment == '-' ? (
+							''
+						) : (
+							<li className="list-group-item">
+								Alignment: &nbsp;
+								<b>{hero.biography.alignment.toUpperCase()}</b>
+							</li>
+						)}
+
 						{hero.biography.alterEgos == 'No alter egos found.' ? (
 							''
 						) : (
