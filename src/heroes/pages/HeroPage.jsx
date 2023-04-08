@@ -37,13 +37,13 @@ export const HeroPage = () => {
 						Go Back
 					</button>
 				</div>
-				<div className="col col-sm-6 col-md-7 col-lg-8 d-flex"></div>
+				<div className="col col-sm-6 col-md-7 col-lg-8 d-flex" />
 			</div>
-			<div className="row mb-3 mt-3 ">
-				<div className="col-sm-12 col-md-5 col-lg-4 d-flex flex-column align-items-center mb-4 animate__animated animate__fadeInLeft">
+			<div className="row mb-3 mt-0 ">
+				<div className="col-sm-12 col-md-5 col-lg-4 d-flex flex-column align-items-center justify-content-center  animate__animated animate__fadeInLeft">
 					<LazyLoadImage
 						className="img-thumbnail border-info border-3 "
-						style={{ minHeight: '320px', marginTop: '2rem' }}
+						style={{ minHeight: '330px' }}
 						placeholderSrc={spinner}
 						effect="blur"
 						src={hero.images.sm}
@@ -51,7 +51,7 @@ export const HeroPage = () => {
 					/>
 				</div>
 
-				<div className=" px-3 px-md-4 px-md-5 col-sm-12 col-md-7 col-lg-8 animate__animated animate__fadeInRight d-flex flex-column justify-content-center">
+				<div className=" px-3 px-md-4 px-md-5 col-sm-12 col-md-7 col-lg-8 animate__animated animate__fadeInRight d-flex flex-column justify-content-center pt-4 pb-4">
 					<div className="d-flex justify-content-around align-items-center">
 						<h2 className="animate__animated animate__slideInDown fw-bold m-0">
 							{hero.name}
@@ -63,26 +63,26 @@ export const HeroPage = () => {
 					</div>
 					<hr className="border-2 border-info" />
 					<ul className="list-group list-group-flush">
-						{hero.biography.publisher == '' ? (
+						{hero.biography.publisher === '' ? (
 							''
 						) : (
 							<li className="list-group-item">
 								Publisher: &nbsp;
-								{<b>{hero.biography.publisher}</b>}
+								<b>{hero.biography.publisher}</b>
 							</li>
 						)}
 
-						{hero.biography.firstAppearance == '-' ? (
+						{hero.biography.firstAppearance === '-' ? (
 							''
 						) : (
 							<li className="list-group-item">
 								First Appearence: &nbsp;
-								{<b>{hero.biography.firstAppearance}</b>}
+								<b>{hero.biography.firstAppearance}</b>
 							</li>
 						)}
 						<br />
 
-						{hero.biography.fullName == '' ? (
+						{hero.biography.fullName === '' ? (
 							''
 						) : (
 							<li className="list-group-item">
@@ -91,7 +91,7 @@ export const HeroPage = () => {
 							</li>
 						)}
 
-						{hero.biography.alignment == '-' ? (
+						{hero.biography.alignment === '-' ? (
 							''
 						) : (
 							<li className="list-group-item">
@@ -100,7 +100,7 @@ export const HeroPage = () => {
 							</li>
 						)}
 
-						{hero.biography.alterEgos == 'No alter egos found.' ? (
+						{hero.biography.alterEgos === 'No alter egos found.' ? (
 							''
 						) : (
 							<li className="list-group-item">
@@ -108,7 +108,7 @@ export const HeroPage = () => {
 								<b>{hero.biography.alterEgos}</b>
 							</li>
 						)}
-						{hero.biography.aliases == '-' ? (
+						{hero.biography.aliases === '-' ? (
 							''
 						) : (
 							<li className="list-group-item">
@@ -119,7 +119,7 @@ export const HeroPage = () => {
 						<br />
 
 						{hero.appearance.race == null &&
-						hero.appearance.gender == '-' ? (
+						hero.appearance.gender === '-' ? (
 							''
 						) : (
 							<li className="list-group-item">
@@ -133,7 +133,7 @@ export const HeroPage = () => {
 									</span>
 								)}
 
-								{hero.appearance.gender == '-' ? (
+								{hero.appearance.gender === '-' ? (
 									''
 								) : (
 									<span>
@@ -144,12 +144,12 @@ export const HeroPage = () => {
 							</li>
 						)}
 
-						{hero.appearance.height[0] == '-' &&
-						hero.appearance.weight[0] == '- lb' ? (
+						{hero.appearance.height[0] === '-' &&
+						hero.appearance.weight[0] === '- lb' ? (
 							''
 						) : (
 							<li className="list-group-item">
-								{hero.appearance.height[0] == '-' ? (
+								{hero.appearance.height[0] === '-' ? (
 									''
 								) : (
 									<span>
@@ -158,7 +158,7 @@ export const HeroPage = () => {
 									</span>
 								)}
 								&nbsp;&nbsp;&nbsp;
-								{hero.appearance.weight[0] == '- lb' ? (
+								{hero.appearance.weight[0] === '- lb' ? (
 									''
 								) : (
 									<span>
