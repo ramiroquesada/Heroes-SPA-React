@@ -1,25 +1,26 @@
-import {  useState, useEffect } from "react";
-import { HeroCard } from "./";
+import {  useState, useEffect, useContext } from "react";
+import { DataContext } from "../context/DataContext";
 import { getHeroesByPublisher } from "../helpers"
+import { HeroCard } from "./";
 
 export const HeroList = ({publisher}) => {
 
+	const data = useContext(DataContext)
 
-	const [heroes, setHeroes] = useState([]);
+
+  const [publisherHeroes, setPublisherHeroes] = useState([]);
 
   useEffect(() => {
-    async function fetchHeroes() {
-      const result = await getHeroesByPublisher(publisher);
-      setHeroes(result);
-    }
-    fetchHeroes();
+		const newHeroes = data ? getHeroesByPublisher(publisher, data) : [];
+    setPublisherHeroes(newHeroes)
   }, [publisher]);
 
 
+	
 	return (
 		<div className="row row-cols-lg-3 mb-5 row-cols-md-2 row-cols-1 g-3 animate__animated animate__fadeIn justify-content-center">
 			{
-				heroes.map(heroe =>  (
+				publisherHeroes.map(heroe =>  (
 					<HeroCard key={heroe.id} {...heroe}/>
 				))
 			}			

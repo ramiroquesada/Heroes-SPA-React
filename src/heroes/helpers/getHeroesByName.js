@@ -1,10 +1,6 @@
 
-import { getHeroesFetch } from "../../hooks/useFetch"
-
-
-export const getHeroesByName = async (name = '') => {
+export const getHeroesByName = (heroes, name = '') => {
 	
-	const heroes = await getHeroesFetch();
 
 	name = name.toLowerCase().trim();
 
