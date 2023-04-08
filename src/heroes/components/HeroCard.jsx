@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import 'react-lazy-load-image-component/src/effects/blur.css';
-import spinner from '../public/Spinner.svg';
+import 'react-lazy-load-image-component/src/effects/opacity.css';
+import spinner from '../public/Spinner.svg'
 
 export const HeroCard = ({ id, name, images }) => {
+	
+
 	return (
 		<div className="col" style={{ maxWidth: '10rem' }}>
 			<Link to={`/heroe/${id}`} className="text-decoration-none">
@@ -12,8 +14,9 @@ export const HeroCard = ({ id, name, images }) => {
 						<LazyLoadImage
 							className="card-img-top"
 							style={{ height: '220px', width: '142px' }}
+							threshold={500}
+							effect="opacity"
 							placeholderSrc={spinner}
-							effect="blur"
 							src={images.sm}
 							alt={name}
 						/>

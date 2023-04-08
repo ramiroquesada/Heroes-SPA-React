@@ -1,12 +1,17 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import queryString from 'query-string';
 
 import { useForm } from '../../hooks';
 import { HeroCard } from '../components';
 import { getHeroesByName } from '../helpers';
+import { DataContext } from '../context/DataContext';
 
 export const SearchPage = () => {
+	
+	const data = useContext(DataContext)
+
+
 	const [heroes, setHeroes] = useState([]);
 
 	const navigate = useNavigate();
@@ -16,8 +21,8 @@ export const SearchPage = () => {
 	const { q = '' } = queryString.parse(location.search);
 
 	useEffect(() => {
-		async function fetchHeroes() {
-			const result = await getHeroesByName(q);
+    function fetchHeroes() {
+			const result = data?  getHeroesByName(data, q) : [];
 			setHeroes(result);
 		}
 		fetchHeroes();

@@ -1,11 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import { DataContext } from '../context/DataContext';
 import { getHeroeById } from '../helpers';
-import spinner from '../public/Spinner.svg'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import spinner from '../public/Spinner.svg';
 
 export const HeroPage = () => {
 	const { id } = useParams();
+
+	const data = useContext(DataContext);
 
 	const [hero, setHero] = useState(null);
 
@@ -15,29 +18,10 @@ export const HeroPage = () => {
 		navigate(-1);
 	};
 
-	const getHeroeByIdPromise = (id) => {
-		return new Promise((resolve, reject) => {
-			const hero = getHeroeById(id);
-			if (hero) {
-				resolve(hero);
-			} else {
-				reject(new Error(`No se pudo obtener el héroe con ID ${id}`));
-			}
-		});
-	};
-
-	const fetchResult = async () => {
-		try {
-			const result = await getHeroeByIdPromise(id);
-			setHero(result);
-		} catch (error) {
-			throw new Error(error);
-		}
-	};
-
 	useEffect(() => {
-		fetchResult();
-	}, []);
+		const newHeroes = data ? getHeroeById(data, id) : [];
+		setHero(newHeroes);
+	}, [id]);
 
 	if (!hero) {
 		return null;
@@ -55,14 +39,14 @@ export const HeroPage = () => {
 				</div>
 				<div className="col col-sm-6 col-md-7 col-lg-8 d-flex"></div>
 			</div>
-			<div className="row mb-3 mt-3">
-				<div className="col-sm-12 col-md-5 col-lg-4 d-flex flex-column align-items-center mb-4">
+			<div className="row mb-3 mt-3 ">
+				<div className="col-sm-12 col-md-5 col-lg-4 d-flex flex-column align-items-center mb-4 animate__animated animate__fadeInLeft">
 					<LazyLoadImage
 						className="img-thumbnail border-info border-3 "
-						style={{maxHeight:'450', marginTop: '2rem'}}
+						style={{ minHeight: '320px', marginTop: '2rem' }}
 						placeholderSrc={spinner}
 						effect="blur"
-						src={hero.images.md}
+						src={hero.images.sm}
 						alt={hero.name}
 					/>
 				</div>
@@ -79,9 +63,14 @@ export const HeroPage = () => {
 					</div>
 					<hr className="border-2 border-info" />
 					<ul className="list-group list-group-flush">
-						<li className="list-group-item">
-							Publisher: &nbsp;<b>{hero.biography.publisher}</b>
-						</li>
+						{hero.biography.publisher == '' ? (
+							''
+						) : (
+							<li className="list-group-item">
+								Publisher: &nbsp;
+								{<b>{hero.biography.publisher}</b>}
+							</li>
+						)}
 
 						{hero.biography.firstAppearance == '-' ? (
 							''
