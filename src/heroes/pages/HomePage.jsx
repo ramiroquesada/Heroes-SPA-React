@@ -45,10 +45,11 @@ export const HomePage = () => {
 				{publishers.map((publisher) => {
 					return (
 						<Link
+						
 							key={publisher}
 							style={{ textDecoration: 'none' }}
 							to={`/publisher/${publisher}`}>
-							<li className="list-group-item fs-5 ">
+							<li className="list-group-item fs-5 publink">
 								{publisher}
 							</li>
 						</Link>

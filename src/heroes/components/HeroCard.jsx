@@ -9,7 +9,7 @@ export const HeroCard = ({ id, name, images }) => {
 	return (
 		<div className="col" style={{ maxWidth: '10rem' }}>
 			<Link to={`/heroe/${id}`} className="text-decoration-none">
-				<div className="card">
+				<div className="card cardhover">
 					<div className="col no-gutters d-flex flex-column justify-content-center">
 						<LazyLoadImage
 							className="card-img-top"
