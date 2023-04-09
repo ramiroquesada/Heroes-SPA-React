@@ -17,3 +17,13 @@ body {
 	-ms-transform: scale(1.05);
 	-o-transform: scale(1.05);
 }
+
+.heroBad{
+	
+	background-color: rgb(255, 225, 225);
+}
+
+.heroGood{
+	background-color: rgb(233, 255, 225);
+}
+
