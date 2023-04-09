@@ -155,8 +155,9 @@ export const HeroPage = () => {
 									<span>
 										Height: &nbsp;
 										<strong>{hero.appearance.height[1]}</strong>
+										&nbsp;&nbsp;&nbsp;
 									</span>
-									&nbsp&nbsp&nbsp
+									
 								)}
 								
 								{hero.appearance.weight[0] === '- lb' ? (

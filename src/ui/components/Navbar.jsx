@@ -41,7 +41,7 @@ export const Navbar = () => {
 							<NavLink
 								className="nav-link"
 								to="publisher/Marvel%20Comics">
-									<span
+								<span
 									data-bs-toggle="collapse"
 									data-bs-target="#navbarNavDropdown">
 									Marvel
@@ -63,7 +63,7 @@ export const Navbar = () => {
 
 						<li className="nav-item">
 							<NavLink className="nav-link" to="./search">
-							<span
+								<span
 									data-bs-toggle="collapse"
 									data-bs-target="#navbarNavDropdown">
 									Search
