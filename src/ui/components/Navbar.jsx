@@ -37,25 +37,37 @@ export const Navbar = () => {
 					className="collapse navbar-collapse"
 					id="navbarNavDropdown">
 					<ul className="navbar-nav">
-						<li className="nav-item">
+						<li className="nav-item ">
 							<NavLink
 								className="nav-link"
 								to="publisher/Marvel%20Comics">
-								Marvel
+									<span
+									data-bs-toggle="collapse"
+									data-bs-target="#navbarNavDropdown">
+									Marvel
+								</span>
 							</NavLink>
 						</li>
 
-						<li className="nav-item">
+						<li className="nav-item ">
 							<NavLink
 								className="nav-link"
 								to="publisher/DC%20Comics">
-								DC
+								<span
+									data-bs-toggle="collapse"
+									data-bs-target="#navbarNavDropdown">
+									DC
+								</span>
 							</NavLink>
 						</li>
 
 						<li className="nav-item">
 							<NavLink className="nav-link" to="./search">
-								Search
+							<span
+									data-bs-toggle="collapse"
+									data-bs-target="#navbarNavDropdown">
+									Search
+								</span>
 							</NavLink>
 						</li>
 					</ul>

@@ -33,7 +33,7 @@ export const HeroPage = () => {
 				<div className="col col-sm-6 col-md-5 col-lg-4 d-flex">
 					<button
 						onClick={onNavigateBack}
-						className="btn btn-secondary rounded-5 text-white fw-semibold mt-2">
+						className="btn btn-secondary rounded-5 text-white fw-semibold mt-2 mb-sm-2">
 						Go Back
 					</button>
 				</div>
@@ -58,7 +58,7 @@ export const HeroPage = () => {
 						</h2>
 						<span>
 							Combat Score: &nbsp;
-							<b className="fs-4">{hero.powerstats.combat}</b>
+							<strong className="fs-4">{hero.powerstats.combat}</strong>
 						</span>
 					</div>
 					<hr className="border-2 border-info" />
@@ -68,7 +68,7 @@ export const HeroPage = () => {
 						) : (
 							<li className="list-group-item">
 								Publisher: &nbsp;
-								<b>{hero.biography.publisher}</b>
+								<strong>{hero.biography.publisher}</strong>
 							</li>
 						)}
 
@@ -77,7 +77,7 @@ export const HeroPage = () => {
 						) : (
 							<li className="list-group-item">
 								First Appearence: &nbsp;
-								<b>{hero.biography.firstAppearance}</b>
+								<strong>{hero.biography.firstAppearance}</strong>
 							</li>
 						)}
 						<br />
@@ -87,7 +87,7 @@ export const HeroPage = () => {
 						) : (
 							<li className="list-group-item">
 								Full Name: &nbsp;
-								<b>{hero.biography.fullName}</b>
+								<strong>{hero.biography.fullName}</strong>
 							</li>
 						)}
 
@@ -96,7 +96,7 @@ export const HeroPage = () => {
 						) : (
 							<li className="list-group-item">
 								Alignment: &nbsp;
-								<b>{hero.biography.alignment.toUpperCase()}</b>
+								<strong>{hero.biography.alignment.toUpperCase()}</strong>
 							</li>
 						)}
 
@@ -105,7 +105,7 @@ export const HeroPage = () => {
 						) : (
 							<li className="list-group-item">
 								Alter Egos: &nbsp;
-								<b>{hero.biography.alterEgos}</b>
+								<strong>{hero.biography.alterEgos}</strong>
 							</li>
 						)}
 						{hero.biography.aliases === '-' ? (
@@ -113,7 +113,7 @@ export const HeroPage = () => {
 						) : (
 							<li className="list-group-item">
 								Aliases: &nbsp;
-								<b>{hero.biography.aliases.join(', ')}</b>
+								<strong>{hero.biography.aliases.join(', ')}</strong>
 							</li>
 						)}
 						<br />
@@ -128,7 +128,7 @@ export const HeroPage = () => {
 								) : (
 									<span>
 										Race: &nbsp;
-										<b>{hero.appearance.race}</b>
+										<strong>{hero.appearance.race}</strong>
 										&nbsp;&nbsp;&nbsp;
 									</span>
 								)}
@@ -138,7 +138,7 @@ export const HeroPage = () => {
 								) : (
 									<span>
 										Gender: &nbsp;
-										<b>{hero.appearance.gender}</b>
+										<strong>{hero.appearance.gender}</strong>
 									</span>
 								)}
 							</li>
@@ -154,16 +154,17 @@ export const HeroPage = () => {
 								) : (
 									<span>
 										Height: &nbsp;
-										<b>{hero.appearance.height[1]}</b>
+										<strong>{hero.appearance.height[1]}</strong>
 									</span>
+									&nbsp&nbsp&nbsp
 								)}
-								&nbsp;&nbsp;&nbsp;
+								
 								{hero.appearance.weight[0] === '- lb' ? (
 									''
 								) : (
 									<span>
 										Weight: &nbsp;
-										<b>{hero.appearance.weight[1]}</b>
+										<strong>{hero.appearance.weight[1]}</strong>
 									</span>
 								)}
 							</li>
