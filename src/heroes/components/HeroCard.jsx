@@ -1,23 +1,22 @@
 import { Link } from 'react-router-dom';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/opacity.css';
-import spinner from '../public/Spinner.svg'
+
 
 export const HeroCard = ({ id, name, images, biography }) => {
-	
+
 
 	return (
 		<div className="col" style={{ maxWidth: '10rem' }}>
 			<Link to={`/heroe/${id}`} className="text-decoration-none">
 					
-				<div className={`card cardhover ${(biography.alignment == 'bad' ? 'heroBad' : 'heroGood')}`}>
+				<div className={`card cardhover ${(biography.alignment == 'bad' ? 'heroBad' : '')} ${(biography.alignment == 'good' ? 'heroGood' : '')} ${(biography.alignment != 'good' && biography.alignment != 'bad' ? 'heroNeutral' : '')}`}>
 					<div className="col no-gutters d-flex flex-column justify-content-center">
 						<LazyLoadImage
 							className="card-img-top"
 							style={{ height: '220px', width: '142px' }}
 							threshold={500}
 							effect="opacity"
-							placeholderSrc={spinner}
 							src={images.sm}
 							alt={name}
 						/>

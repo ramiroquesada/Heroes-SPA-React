@@ -3,7 +3,6 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { DataContext } from '../context/DataContext';
 import { getHeroeById } from '../helpers';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import spinner from '../public/Spinner.svg';
 
 export const HeroPage = () => {
 	const { id } = useParams();
@@ -44,7 +43,6 @@ export const HeroPage = () => {
 					<LazyLoadImage
 						className="img-thumbnail border-3 "
 						style={{ minHeight: '330px', borderColor: (hero.biography.alignment == 'bad' ? 'rgb(255, 109, 109)' : 'rgb(14, 149, 94)')}}
-						placeholderSrc={spinner}
 						effect="blur"
 						src={hero.images.sm}
 						alt={hero.name}
