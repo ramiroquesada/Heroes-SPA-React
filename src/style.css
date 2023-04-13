@@ -20,13 +20,13 @@ body {
 
 .heroBad{
 	
-	background-color: rgb(255, 225, 225);
+	background-color: rgb(255, 208, 208);
 }
 
 .heroGood{
-	background-color: rgb(233, 255, 225);
+	background-color: rgb(213, 249, 199);
 }
 
 .heroNeutral{
-	background-color: rgb(233, 233, 233);
+	background-color: rgb(168, 168, 168);
 }
