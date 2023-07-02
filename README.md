@@ -1,6 +1,6 @@
 # Heroes-SPA-React
 
-[Live App](https://ramessj.github.io/Heroes-SPA-React/)
+[Live App](https://ramiroquesada.github.io/Heroes-SPA-React/)
 
 Conceptos aplicados en el proyecto:
 
